@@ -1,0 +1,16 @@
+﻿<div class="col-md-6 col-md-offset-3">
+    <h1>Hi {{currentUser.firstName}}!</h1>
+   
+    
+    <p><a [routerLink]="['/addTicket']">Add Ticket</a></p>
+    <ul>
+        
+        <li *ngFor="let ticket of tickets">
+            {{ticket.title}} ({{ticket.description}})
+           
+            - <a (click)="updateTicket(ticket)">update</a>
+            - <a (click)="deleteTicket(ticket.id)">Delete</a>
+        </li>
+    </ul>
+    <p><a [routerLink]="['/login']">Logout</a></p>
+</div>
